@@ -21,13 +21,14 @@ int main()
 
 
 	int* arr1 = new int[arrsize];
+	arr1[0] = 1;
+	arr1[1] = 2;
+	arr1[2] = 3;
+	add_product(12, arr1, arrsize);
 	for (int i = 0; i < arrsize; i++)
 	{
-		
-		arr1[i] = rand() % 10 + 1;
+		std::cout << arr1[i] << " ";
 	}
-	add_product(12, arr1, arrsize);
-	std::cout << arr1;
 
 
 
@@ -41,6 +42,6 @@ void add_product(int idorder, int *idarr, int arrsize) { // idorder needs to be 
 	{
 		newidarr[i] = idarr[i];
 	}
-	newidarr[arrsize++] = idorder;
+	newidarr[arrsize+ 2] = idorder;
 	
 }
