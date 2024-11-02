@@ -34,18 +34,13 @@ int main()
 	return 0;
 }
 
-void add_product(int idorder, int *idarr, int arrsize) { // idorder needs to be defined in other function, that works with storage refresh, but it's just a test xd :)
+void add_product(int idorder, int *idarr, int arrsize) { // idorder needs to be defined in other function, that works with storage refresh
 	int *newidarr = new int[arrsize++];
 
 	for (int i = 0; i < arrsize; i++)
 	{
 		newidarr[i] = idarr[i];
 	}
-	newidarr[arrsize] = idorder;
-
-	for (int i = 0; i < arrsize++; i++)
-	{
-		idarr[i] = newidarr[i];
-	}
-
+	newidarr[arrsize++] = idorder;
+	
 }
