@@ -3,14 +3,8 @@
 #include <iostream>
 #include <Windows.h>
 
-class storage {
-public: 
-	
 
-
-
-};
-void add_product(int idorder, int* idarr, int arrsize);
+template <typename arr> arr* add_product(int idorder, int* idarr, int arrsize);
 
 int main()
 {
@@ -24,24 +18,26 @@ int main()
 	arr1[0] = 1;
 	arr1[1] = 2;
 	arr1[2] = 3;
-	add_product(12, arr1, arrsize);
+	unsigned int id = 95214214;
+	add_product(id, arr1, arrsize);
 	for (int i = 0; i < arrsize; i++)
 	{
-		std::cout << arr1[i] << " ";
+		std::cout <<  << " ";
 	}
 
 
 
 	return 0;
 }
-
-void add_product(int idorder, int *idarr, int arrsize) { // idorder needs to be defined in other function, that works with storage refresh
-	int *newidarr = new int[arrsize++];
+template <typename arr>
+arr* add_product(int idorder, int* idarr, int arrsize) { // idorder needs to be defined in other function, that works with storage refresh
+	arr* newidarr = new arr[arrsize++];
 
 	for (int i = 0; i < arrsize; i++)
 	{
 		newidarr[i] = idarr[i];
 	}
-	newidarr[arrsize+ 2] = idorder;
-	
+	newidarr[arrsize + 2] = idorder;
+
+	return newidarr;
 }
